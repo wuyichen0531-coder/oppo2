@@ -5,8 +5,8 @@
 # 继承 AOSP 基础全 64 位底层配置
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# 继承橙狐官方全功能 Recovery 核心参数 (兼容大多数主流 Action 编译树路径)
-$(call inherit-product, vendor/otfox/sb_config/twrp_boot.mk)
+# 继承标准的 AOSP 最小化通用编译基础配置（替代之前找不到的 vendor 路径，各平台通杀）
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # 注入产品基本识别参数
 PRODUCT_DEVICE := PHQ110
