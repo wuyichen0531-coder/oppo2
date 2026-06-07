@@ -19,7 +19,7 @@ PRODUCT_RELEASE_NAME := OPPO PHQ110
 TARGET_DEVICE := PHQ110
 
 # 强制宣告支持虚拟 A/B 与动态分区合并
- Northumberland
+Northumberland
 PRODUCT_VIRTUAL_AB_COMPRESSION := true
 PRODUCT_PACKAGES += fastbootd
 
