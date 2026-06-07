@@ -31,5 +31,4 @@ PRODUCT_COPY_FILES += \
 
 # 3. 映射防死锁的 VINTF 严格模式架构声明文件 (.xml)
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest/vendor-oplus-hardware-touch.xml:recovery/root/vendor/etc/vintf/manifest/vendor-oplus-hardware-touch.xml \
-    $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest/vendor-oplus-hardware-touch-V1.xml:recovery/root/vendor/etc/vintf/manifest/vendor-oplus-hardware-touch-V1.xml
+    $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest/vendor-oplus-hardware-touch.xml:recovery/root/vendor/etc/vintf/manifest/vendor-oplus-hardware-touch.xml 
