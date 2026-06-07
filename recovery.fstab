@@ -1,0 +1,29 @@
+# OrangeFox Recovery fstab for OPPO A1 Pro (PHQ110) | SM6375 Holi
+# 基于原厂 fstab.qcom 生成 | boot-as-recovery | FBE 加密
+
+# mount point   fstype  device                                              flags
+/system         erofs   system                                              display="System";slotselect;logical;first_stage_mount
+/system_ext     erofs   system_ext                                          display="System_ext";slotselect;logical;first_stage_mount
+/product        erofs   product                                             display="Product";slotselect;logical;first_stage_mount
+/vendor         erofs   vendor                                              display="Vendor";slotselect;logical;first_stage_mount
+/odm            erofs   odm                                                 display="Odm";slotselect;logical;first_stage_mount
+
+/my_product     erofs   my_product                                          display="My_Product";slotselect;logical
+/my_engineering erofs   my_engineering                                      display="My_Engineering";slotselect;logical
+/my_company     erofs   my_company                                          display="My_Company";slotselect;logical
+/my_carrier     erofs   my_carrier                                          display="My_Carrier";slotselect;logical
+/my_region      erofs   my_region                                           display="My_Region";slotselect;logical
+/my_heytap      erofs   my_heytap                                           display="My_Heytap";slotselect;logical
+/my_stock       erofs   my_stock                                            display="My_Stock";slotselect;logical
+/my_preload     erofs   my_preload                                          display="My_Preload";slotselect;logical
+
+/metadata       ext4    /dev/block/by-name/metadata                         display="Metadata"
+/data           f2fs    /dev/block/by-name/userdata                         fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts:wrappedkey_v0
+/cache          ext4    /dev/block/by-name/oplusreserve2                    display="Cache";fsmgr_flags=wait,check
+
+/boot           emmc    /dev/block/by-name/boot                             display="Boot";slotselect
+/misc           emmc    /dev/block/by-name/misc                             display="Misc"
+/persist        ext4    /dev/block/by-name/persist                          display="Persist"
+
+/external_sd    vfat    /dev/block/mmcblk1p1                                display="MicroSD Card";storage;wipeui;removable
+/usb_otg        vfat    /dev/block/sdg1                                     display="USB OTG";storage;wipeui;removable
